@@ -37,6 +37,7 @@
       "last 1 safari version"
     ]
   },
+  "author": "Samuel Martins",
   "devDependencies": {
     "json-server": "^0.17.0"
   }
