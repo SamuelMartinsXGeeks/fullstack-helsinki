@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/SamuelMartinsXGeeks/fullstack-helsinki/issues"
   },
-  "homepage": "https://github.com/SamuelMartinsXGeeks/fullstack-helsinki#readme"
+  "homepage": "https://github.com/SamuelMartinsXGeeks/fullstack-helsinki#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
