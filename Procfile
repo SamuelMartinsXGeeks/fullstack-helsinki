@@ -1,1 +1,1 @@
-web: npm run frontend-h & npm run backend-h
+web: npm run start
