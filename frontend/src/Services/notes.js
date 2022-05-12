@@ -4,7 +4,7 @@ import axios from 'axios'
 const localURL = "http://localhost:3001/api/notes";
 const herokuURL = "https://fullstack-helsinki-learning.herokuapp.com/api/notes";
 
-const baseUrl = localURL;
+const baseUrl = herokuURL;
 
 const getAll = () => {
   const request = axios.get(baseUrl)

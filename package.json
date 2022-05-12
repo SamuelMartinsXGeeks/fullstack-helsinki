@@ -2,13 +2,14 @@
   "name": "fullstackopen",
   "version": "1.0.0",
   "description": "Hello!\r This is my learning project taken from the free course on https://fullstackopen.com/en",
-  "main": "index.js",
+  "main": "./frontend/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "frontend": "cd frontend && npm start --watch",
     "backend": "cd backend && npm run dev",
     "frontend-h": "cd frontend && npm start",
-    "backend-h": "cd backend && npm run start"
+    "backend-h": "cd backend && npm run start",
+    "all": "cd backend && npm run start & cd .. && cd frontend && npm run start"
   },
   "repository": {
     "type": "git",
