@@ -1,0 +1,21 @@
+{
+  "name": "fullstackopen",
+  "version": "1.0.0",
+  "description": "Hello!\r This is my learning project taken from the free course on https://fullstackopen.com/en",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend":"cd frontend && npm start --watch",
+    "backend":"cd backend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelMartinsXGeeks/fullstack-helsinki.git"
+  },
+  "author": "Samuel Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SamuelMartinsXGeeks/fullstack-helsinki/issues"
+  },
+  "homepage": "https://github.com/SamuelMartinsXGeeks/fullstack-helsinki#readme"
+}
