@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/api/notes'
+const baseUrl = 'https://fullstack-helsinki-learning.herokuapp.com/api/notes'
 
 const getAll = () => {
   const request = axios.get(baseUrl)

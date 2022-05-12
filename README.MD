@@ -15,3 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### This app uses Heroku as a deployment environment (no database, just node.)
+
+The app is running on https://fullstack-helsinki-learning.herokuapp.com/api/notes
