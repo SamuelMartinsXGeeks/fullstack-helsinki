@@ -1,0 +1,10 @@
+GET http://localhost:3001/api/notes
+###
+POST http://localhost:3001/api/notes
+content-type: application/json
+
+{
+    "content": "sample",
+    "date": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "important": true
+}
