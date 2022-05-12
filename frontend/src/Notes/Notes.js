@@ -73,7 +73,7 @@ const Notes = () => {
 
   const deleteNote = (id) => {
     noteService.remove(id).then(response => {
-      if (response.status === 200) {
+      if (response.status === 204) {
         setNotes(notes.filter(n => n.id !== id));
       }
     })

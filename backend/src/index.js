@@ -55,8 +55,38 @@ app.get('/api/notes/:id', (request, response) => {
 
 app.put('/api/notes/:id', (request, response) => {
   const id = +request.params.id;
-  const note = notes.find(note => note.id === id);
-  response.json(note);
+
+  let existingNote = notes.find(note => note.id === id);
+
+  if (!existingNote) {
+    return response.status(400).json({
+      error: 'Note not found'
+    })
+  }
+
+  if (!request.body) {
+    return response.status(400).json({
+      error: 'Must provide anything to update on note'
+    })
+  }
+
+  const body = request.body;
+
+  if (body.content && typeof body.content === 'string') {
+    existingNote.content = body.content;
+  }
+
+  if (typeof body.important === 'boolean') {
+    existingNote.important = body.important;
+  }
+
+  if (body.date && typeof body.date === 'string' && !isNaN(Date.parse(body.date))) {
+    existingNote.date = body.date;
+  }
+
+  notes = notes.map(note => note.id === id ? existingNote : note);
+
+  response.json(existingNote);
 });
 
 app.delete('/api/notes/:id', (request, response) => {

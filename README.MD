@@ -19,3 +19,5 @@ You may also see any lint errors in the console.
 ### This app uses Heroku as a deployment environment (no database, just node.)
 
 The app is running on https://fullstack-helsinki-learning.herokuapp.com/api/notes
+
+$heroku run npm run backend-h
