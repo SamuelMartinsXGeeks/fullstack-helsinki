@@ -4,11 +4,9 @@ const PORT = process.env.PORT
 
 const localURL = `http://localhost:${PORT}/api/notes`;
 
-console.log(`Frontend listening for Backend on PORT ${PORT}`)
-
 const herokuURL = "https://fullstack-helsinki-learning.herokuapp.com/api/notes";
 
-const baseUrl = localURL;
+const baseUrl = herokuURL;
 
 const getAll = () => {
   const request = axios.get(baseUrl)
