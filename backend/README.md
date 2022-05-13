@@ -2,6 +2,8 @@
 
 This project was bootstrapped with node using 'npm init'
 
+This API uses a deployment on Heroku and communications with MongoDB Atlas
+
 ## Available Scripts
 
 In the project directory, you can run:
