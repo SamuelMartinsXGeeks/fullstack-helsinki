@@ -5,11 +5,13 @@
   "main": "./frontend/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "cd frontend && npm start --watch",
-    "backend": "cd backend && npm run dev",
-    "frontend-h": "cd frontend && npm start",
-    "backend-h": "cd backend && npm run start",
-    "start": "cd frontend && npm run start & cd backend && npm run start"
+    "frontend-dev": "cd frontend && npm start --watch",
+    "backend-dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && npm run start",
+    "build":"cd frontend && rm -rf package-lock.json && rm -rf node_modules && npm cache clean --force && npm install && npm run build && rm -rf ../backend/build && mv build ../backend && cd ..",
+    "start": "npm run frontend & npm run backend",
+    "dev":"npm run frontend-dev & npm run backend-dev"
   },
   "repository": {
     "type": "git",

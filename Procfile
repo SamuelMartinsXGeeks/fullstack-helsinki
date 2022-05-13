@@ -1,1 +1,1 @@
-web: cd frontend && cp -r build ../backend && cd .. && npm run backend-h
+web: npm run backend
