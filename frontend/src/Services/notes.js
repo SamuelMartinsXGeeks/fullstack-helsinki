@@ -1,7 +1,11 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios'
+const PORT = process.env.PORT
 
-const localURL = "http://localhost:3001/api/notes";
+const localURL = `http://localhost:${PORT}/api/notes`;
+
+console.log(`Frontend listening for Backend on PORT ${PORT}`)
+
 const herokuURL = "https://fullstack-helsinki-learning.herokuapp.com/api/notes";
 
 const baseUrl = localURL;
