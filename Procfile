@@ -1,1 +1,1 @@
-web: cd frontend && npm install && npm run build && cp -r build ../backend && cd .. && npm run backend-h
+web: cd frontend && rm -rf package-lock.json && rm -rf node_modules && npm cache clean --force && npm install && npm run build && cp -r build ../backend && cd .. && npm run backend-h
