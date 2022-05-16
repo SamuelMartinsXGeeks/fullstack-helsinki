@@ -9,11 +9,13 @@ let counterNumber = 0;
 const App = () => {
 
   return (
-    <div>
+    /*
       <Hello name="Sam" age={24} />
       <SimpleStateTest counter={counterNumber} />
       <ObjectStateTest />
       <ArrayStateTest />
+    */
+    <div>
       <Notes />
     </div>
   );

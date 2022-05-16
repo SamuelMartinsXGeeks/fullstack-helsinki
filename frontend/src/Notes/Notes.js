@@ -2,6 +2,7 @@ import React from "react";
 import Note from "./Note";
 import { useState, useEffect } from "react";
 import noteService from "../Services/notes";
+import loginService from '../Services/login'
 
 const Notes = () => {
 
@@ -9,24 +10,72 @@ const Notes = () => {
     id: null,
     content: '',
     date: new Date(Date.now()).toISOString(),
-    important: false
+    important: false,
+    user: ''
   };
 
   const [newNote, setNewNote] = useState(defaultNote);
   const [showAll, setShowAll] = useState(true);
   const [notes, setNotes] = useState([]);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [user, setUser] = useState(null)
 
-  //Since the second parameter is [] the effect is only ran on the first render.
-  useEffect(() => {
-    noteService
-      .getAll()
-      .then(initialNotes => {
-        setNotes(initialNotes);
+  const handleLogin = async (event) => {
+    event.preventDefault()
+    try {
+      const user = await loginService.login({
+        username, password,
       })
+      setUser(user)
+      setUsername('')
+      setPassword('')
+      //alert("Login Successfull")
+      noteService.setToken(user.token);
+
+      //Store user data.
+      window.localStorage.setItem('loggedNoteappUser', JSON.stringify(user));
+
+      const userNotes = await noteService.getAll()
+      setNotes(userNotes);
+
+    } catch (exception) {
+      //alert("Login Error.")
+      console.log(exception);
+      //setErrorMessage('Wrong credentials')
+      setTimeout(() => {
+        //setErrorMessage(null)
+      }, 5000)
+    }
+  }
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      noteService.setToken(user.token)
+
+      noteService
+        .getAll()
+        .then(initialNotes => {
+          setNotes(initialNotes);
+        })
+    }
   }, [])
 
   const addNote = (event) => {
     event.preventDefault();
+
+    if (!user) {
+      alert("Must be logged in");
+      return;
+    }
+
+    console.log(user);
+
+    newNote.user = user.id;
+
     noteService
       .create(newNote)
       .then(returnedNote => {
@@ -83,9 +132,20 @@ const Notes = () => {
 
   return (
     <div>
-      <h4>-- Component: Notes</h4>
       <div>
         <h2>Notes</h2>
+        <form onSubmit={handleLogin}>
+          <div>
+            username
+            <input type="text" value={username} name="Username" onChange={({ target }) => setUsername(target.value)} />
+          </div>
+          <div>
+            password
+            <input type="password" value={password} name="Password" onChange={({ target }) => setPassword(target.value)} />
+          </div>
+          <button type="submit">login</button>
+        </form>
+
         <ul>
           {notesToShow.map(note =>
             <Note
