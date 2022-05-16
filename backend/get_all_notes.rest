@@ -1,10 +1,21 @@
 GET http://localhost:3001/api/notes
 ###
 POST http://localhost:3001/api/notes
-content-type: application/json
 
+content-type: application/json
 {
     "content": "sample",
     "date": "Wed, 21 Oct 2015 18:27:50 GMT",
     "important": true
+}
+###
+GET http://localhost:3001/api/users
+
+###
+POST http://localhost:3001/api/login
+
+content-type: application/json
+{
+    "username": "admin",
+    "password": "password"
 }
