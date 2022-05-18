@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const Note = ({ note, toggleImportance, onClickDelete }) => {
 
   const label = note.important
-    ? 'Set NOT Important' : 'Set Important'
+    ? 'Set NOT Important' : 'Set Important';
 
   let isBold = !note.important ? { fontWeight: '100' } : { fontWeight: '600' };
 
@@ -21,6 +21,6 @@ const Note = ({ note, toggleImportance, onClickDelete }) => {
       }}>Delete</button>
     </li>
   );
-}
+};
 
 export default Note;

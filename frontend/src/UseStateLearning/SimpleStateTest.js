@@ -16,6 +16,6 @@ const SimpleStateTest = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SimpleStateTest;

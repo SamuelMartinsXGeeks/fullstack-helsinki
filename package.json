@@ -8,7 +8,9 @@
     "dev-frontend": "cd frontend && npm start --watch",
     "dev-backend": "cd backend && npm run dev",
     "start": "cd backend && npm run start",
-    "build": "cd frontend && rm -rf package-lock.json && rm -rf node_modules && npm cache clean --force && npm install && npm run build && rm -rf ../backend/build && mv build ../backend && cd .."
+    "build": "cd frontend && rm -rf package-lock.json && rm -rf node_modules && npm cache clean --force && npm install && npm run build && rm -rf ../backend/build && mv build ../backend && cd ..",
+    "eslint":"npx eslint .",
+    "clean":"npx eslint . --fix"
   },
   "repository": {
     "type": "git",
