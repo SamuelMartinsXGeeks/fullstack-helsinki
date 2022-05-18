@@ -1,11 +1,9 @@
-import { useState, useContext } from 'react';
-import { UserContext } from '../Contexts/UserContext';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const NotesForm = ({ onAddNote }) => {
+const NotesForm = ({ onAddNote, user }) => {
   const [noteContent, setNoteContent] = useState('');
   const [noteImportant, setNoteImportant] = useState(false);
-  const [user] = useContext(UserContext);
 
   const addNote = (e) => {
     e.preventDefault();
@@ -30,7 +28,11 @@ const NotesForm = ({ onAddNote }) => {
       <form onSubmit={addNote}>
         <div>
           Note:
-          <input type="text" value={noteContent} onChange={(e) => { setNoteContent(e.target.value); }} />
+          <input
+            type="text"
+            value={noteContent}
+            onChange={(e) => { setNoteContent(e.target.value); }}
+            placeholder='Write here note content' />
         </div>
         <div>
           Important:

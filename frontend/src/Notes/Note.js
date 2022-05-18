@@ -8,7 +8,7 @@ const Note = ({ note, toggleImportance, onClickDelete }) => {
   let isBold = !note.important ? { fontWeight: '100' } : { fontWeight: '600' };
 
   return (
-    <li>
+    <li className='note'>
       <label style={isBold}>{note.content}</label>
       <span>   --   </span>
       <button onClick={toggleImportance}>{label}</button>

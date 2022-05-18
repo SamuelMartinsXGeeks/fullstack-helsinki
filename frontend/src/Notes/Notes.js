@@ -88,7 +88,7 @@ const Notes = () => {
         <input type="checkbox" checked={showAll} onChange={(e) => { setShowAll(e.target.checked); }} />
       </div>
       <Togglable buttonLabel='Create Note' ref={noteFormRef}>
-        <NotesForm onAddNote={addNote} />
+        <NotesForm onAddNote={addNote} user={user} />
       </Togglable>
     </div>
   );
