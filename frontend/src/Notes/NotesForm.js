@@ -29,6 +29,7 @@ const NotesForm = ({ onAddNote, user }) => {
         <div>
           Note:
           <input
+            id='note-content-input'
             type="text"
             value={noteContent}
             onChange={(e) => { setNoteContent(e.target.value); }}
@@ -36,9 +37,9 @@ const NotesForm = ({ onAddNote, user }) => {
         </div>
         <div>
           Important:
-          <input type="checkbox" checked={noteImportant} onChange={(e) => { setNoteImportant(e.target.checked); }} />
+          <input id='important-note-checkbox' type="checkbox" checked={noteImportant} onChange={(e) => { setNoteImportant(e.target.checked); }} />
         </div>
-        <button type="submit">SAVE</button>
+        <button id='save-note-button' type="submit">SAVE</button>
       </form>
     </div>
   );

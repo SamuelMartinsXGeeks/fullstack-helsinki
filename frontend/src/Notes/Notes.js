@@ -74,6 +74,7 @@ const Notes = () => {
     <div>
       <div>
         <h2>Notes</h2>
+        <h3>A study app, by Samuel Martins</h3>
         <ul>
           {notesToShow.map(note =>
             <Note

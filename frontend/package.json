@@ -21,12 +21,15 @@
     "eject": "react-scripts eject",
     "server": "npx json-server --port 3001 --watch db.json",
     "eslint": "npx eslint .",
-    "clean": "npx eslint . --fix"
+    "clean": "npx eslint . --fix",
+    "cypress:open": "cypress open",
+    "tests:e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -45,6 +48,8 @@
   "devDependencies": {
     "@testing-library/user-event": "^14.2.0",
     "cross-env": "^7.0.3",
+    "cypress": "^9.6.1",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^26.2.2",
     "json-server": "^0.17.0"
   }
